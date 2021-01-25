@@ -12,8 +12,8 @@ fun register(user : User): String {
         FileWriter(fileName).use{it.write(File("NazarLox.txt").readLines()[0] + "~" + str.split("~")[0] + "\n")}
         FileWriter(fileName).use{it.write(strs.joinToString(separator = "\n"))}
         FileWriter(fileName).use{it.write(str)}
+        return "OK"
     } else {
         return "ERROR: this ID locked"
     }
-    FileWriter(fileName).use{it.write(str + "\n")}
 }

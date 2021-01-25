@@ -1,0 +1,53 @@
+Index: src/app.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/app.kt b/src/app.kt
+--- a/src/app.kt	(revision e3099381f4b494a1bf9b088ef5fe26ed90e06c26)
++++ b/src/app.kt	(date 1611561626401)
+@@ -1,0 +1,15 @@
++import java.io.FileWriter
++import java.io.FileReader
++
++
++fun register(user: User)
++{
++    var str1 = user.toString()
++    val fileName = "NazarLox.txt"
++    FileReader(fileName).use{}
++    FileWriter(fileName).use{it.write(str + "\n")}
++}
++
++fun main(args: Array<String>) {
++    register()
++}
+\ No newline at end of file
+Index: NazarLox.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/NazarLox.txt b/NazarLox.txt
+new file mode 100644
+--- /dev/null	(date 1611561574837)
++++ b/NazarLox.txt	(date 1611561574837)
+@@ -0,0 +1,1 @@
++user.toString()
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1611561478799)
++++ b/.idea/vcs.xml	(date 1611561478799)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file

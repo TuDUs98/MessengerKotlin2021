@@ -4,16 +4,19 @@ import java.io.File
 import User
 
 
-fun register(user : User): String {
-    val str = user.toString()
+fun register(user : User): Boolean {
+val str = user.toString()
     val fileName = "NazarLox.txt"
-    val strs = File("NazarLox.txt").readLines()
-    if (str.split("~")[0] in File("NazarLox.txt").readLines()[0].split("~")){
-        FileWriter(fileName).use{it.write(File("NazarLox.txt").readLines()[0] + "~" + str.split("~")[0] + "\n")}
+    val del = "~"
+    val userID = str.split(del)[0]
+    var strs = File(fileName).readLines().toMutableList()
+    val users = strs[0].split(del)
+    return if (userID !in users){
+        strs[0] = strs[0] + del + userID
+        strs.add(str)
         FileWriter(fileName).use{it.write(strs.joinToString(separator = "\n"))}
-        FileWriter(fileName).use{it.write(str)}
-        return "OK"
+        true
     } else {
-        return "ERROR: this ID locked"
+        false
     }
 }
